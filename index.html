@@ -1,2 +1,435 @@
-# josiph.github.io
-github test
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Josiph Ibraheem | Personal Website</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f19;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid #252b3a;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #4f8cff;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4f8cff;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 8% 60px;
+            background:
+                radial-gradient(circle at 80% 30%, #172c55 0%, transparent 30%),
+                #0b0f19;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #4f8cff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b8bfcc;
+            max-width: 650px;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 13px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #4f8cff;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #326edb;
+            transform: translateY(-2px);
+        }
+
+        .secondary {
+            border: 1px solid #3b4354;
+            color: white;
+        }
+
+        .secondary:hover {
+            border-color: #4f8cff;
+            color: #4f8cff;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #929aaa;
+        }
+
+        /* About */
+        .about {
+            background: #0f1420;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            color: #c5cad4;
+            font-size: 1.1rem;
+        }
+
+        /* Interests */
+        .interest-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: #111827;
+            padding: 35px 25px;
+            border: 1px solid #252d3d;
+            border-radius: 14px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #4f8cff;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #9fa7b6;
+        }
+
+        /* Cybersecurity */
+        .cyber {
+            background: #0f1420;
+        }
+
+        .cyber-content {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .skill {
+            padding: 10px 18px;
+            background: #172033;
+            border: 1px solid #2b3850;
+            border-radius: 50px;
+            color: #b9c8e8;
+        }
+
+        /* Contact */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #a5adba;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #080b12;
+            color: #777f8f;
+            border-top: 1px solid #202635;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 800px) {
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+            .interest-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Josiph<span>.</span></div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#cybersecurity">Cybersecurity</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hello, I'm <span>Josiph Ibraheem.</span></h1>
+
+            <p>
+                Welcome to my personal website. I'm interested in technology,
+                video games, music, and cybersecurity. I'm always learning,
+                exploring new ideas, and building my skills.
+            </p>
+
+            <div class="buttons">
+                <a href="#interests" class="btn primary">
+                    Explore My Interests
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>A little about who I am</p>
+        </div>
+
+        <div class="about-content">
+            <p>
+                My name is Josiph Ibraheem. I have a strong interest in
+                technology and enjoy learning about different areas of
+                computing. Outside of technology, I enjoy video games and
+                music. I'm especially interested in cybersecurity and the
+                ways technology can be used to protect information and
+                systems.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Interests Section -->
+    <section id="interests">
+        <div class="section-title">
+            <h2>My Interests</h2>
+            <p>The things I'm passionate about</p>
+        </div>
+
+        <div class="interest-grid">
+
+            <div class="card">
+                <div class="icon">🎮</div>
+                <h3>Video Games</h3>
+                <p>
+                    I enjoy playing video games, exploring different genres,
+                    and experiencing the creativity behind interactive
+                    worlds.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🎵</div>
+                <h3>Music</h3>
+                <p>
+                    Music is another major interest of mine. I enjoy
+                    discovering new artists, listening to different genres,
+                    and exploring how music brings people together.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔐</div>
+                <h3>Cybersecurity</h3>
+                <p>
+                    I'm interested in cybersecurity, digital security,
+                    ethical hacking, and learning how systems can be
+                    protected from threats.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Cybersecurity Section -->
+    <section class="cyber" id="cybersecurity">
+        <div class="section-title">
+            <h2>Cybersecurity</h2>
+            <p>An area of technology I'm interested in exploring</p>
+        </div>
+
+        <div class="cyber-content">
+            <p>
+                Cybersecurity combines problem-solving, technology, and
+                continuous learning. I'm interested in understanding how
+                computer systems work, identifying vulnerabilities, and
+                learning responsible ways to protect digital information.
+            </p>
+
+            <div class="skills">
+                <span class="skill">Network Security</span>
+                <span class="skill">Ethical Hacking</span>
+                <span class="skill">Linux</span>
+                <span class="skill">Programming</span>
+                <span class="skill">Digital Security</span>
+                <span class="skill">Problem Solving</span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Let's Connect</h2>
+            <p>Thanks for visiting my website.</p>
+        </div>
+
+        <p>
+            Interested in technology, gaming, music, or cybersecurity?
+            Feel free to connect with me.
+        </p>
+
+        <a href="mailto:your-email@example.com" class="btn primary">
+            Email Me
+        </a>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            © 2026 Josiph Ibraheem. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
+```
